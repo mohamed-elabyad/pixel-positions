@@ -50,9 +50,7 @@ http://127.0.0.1:8000
 
 ## 🧪 Dummy Data (Factories & Seeders)
 
-Run:
-
-```bash
+Run the following command:
 php artisan migrate:fresh --seed
 
 20 jobs:
