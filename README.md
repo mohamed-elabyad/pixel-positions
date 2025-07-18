@@ -1,71 +1,70 @@
-# Pixel_Positions
+# 🎯 Pixel_Positions
 
-**Pixel_Positions** is a modern job board platform and my **first Laravel project**, built from scratch with no starter kits.  
-Employers can register, post jobs with tags, logos, and external URLs. Upon posting, an email is sent using Laravel queues.  
-Designed with a clean, responsive interface using **Tailwind CSS v4+**, **Vite v7**, and **Laravel v12.20.0**.
+**Pixel_Positions** is a modern, full-stack job board platform built with **Laravel 12**, **Tailwind CSS**, and **Vite**.  
+It allows employers to register and post job listings with advanced features such as tags, company logos, job types, and email notifications powered by Laravel Queues.
+
+Designed with a clean, responsive UI and a scalable structure — suitable for real-world applications and production environments.
 
 ---
 
 ## 🚀 Live Preview
 
-Runs locally on:
-
-http://127.0.0.1:8000
-
+> 🖥️ Localhost: `http://127.0.0.1:8000`
 
 ---
 
-## 🛠 Tech Stack & Versions
+## 🛠 Tech Stack
 
-- **Laravel** v12.20.0 :contentReference[oaicite:1]{index=1}  
-- **Tailwind CSS** v4.1.11 :contentReference[oaicite:2]{index=2}  
-- **Vite** v7.x (latest `create-vite@7.0.3`) :contentReference[oaicite:3]{index=3}  
-- **PHP** v8.2+  
-- **MySQL** v8+  
-- **Mailtrap** (for SMTP testing)  
-- **Laravel Queues** with custom queue tables (`queued_jobs`, `queued_failed_jobs`, `queued_job_batches`)
-
----
-
-## 🔥 Features
-
-- ✅ User registration & login (custom, no starter kits)  
-- ✅ Company logo upload (stored via `storage:link`)  
-- ✅ Job posting includes:
-  - Title (links to external URL)
-  - Company/Employee name, Logo
-  - Salary, Location
-  - Full-time / Part-time toggles
-  - Tags (many-to-many)
-  - Featured toggle  
-- ✅ Homepage sections:
-  - Featured Jobs
-  - Recent Jobs
-  - Tags with filtering
-- ✅ Email notification on job creation (queued with Laravel queues & Mailtrap)  
-- ✅ Clean and responsive UI with Tailwind CSS  
-- ✅ Authorization policies ensure only owners can post
+- **Laravel** 12.20  
+- **Tailwind CSS** 4.1  
+- **Vite** 7  
+- **PHP** 8.2+  
+- **MySQL** 8+  
+- **Mailtrap** (SMTP testing)  
+- **Laravel Queues** with custom queue tables  
+  (`queued_jobs`, `queued_failed_jobs`, `queued_job_batches`)
 
 ---
 
-## 🧪 Dummy Data (Factories & Seeders)
+## ✨ Key Features
 
-Run the following command:
+- 👤 **User Authentication**
+  - Secure registration and login system (no starter kits)
+- 💼 **Job Management**
+  - Create, read, and filter job listings
+  - Assign tags (many-to-many relationship)
+  - Add salary, job type (Full-time / Part-time), location, and external link
+  - Upload company logos (`storage:link`)
+  - Toggle featured jobs
+- 📬 **Email Notifications**
+  - Queued email sent to admin on each job creation (via Mailtrap)
+- 🏷️ **Tag Filtering**
+  - Jobs filterable by tags on homepage
+- 🔐 **Authorization Policies**
+  - Only job owners can manage their listings
+- 💅 **Responsive UI**
+  - Built with Tailwind CSS and Blade components
+
+---
+
+## 🧪 Dummy Data & Seeders:
+
+To populate the database with test data:
+
+run bash:
 php artisan migrate:fresh --seed
 
-20 jobs:
+Includes:
 
-10 featured & full-time
+20 jobs (10 featured, 10 not featured)
 
-10 non-featured & part-time
+3 tags (linked via pivot table)
 
-3 tags
-
-Tags are linked to all jobs via pivot table (job_tag)
+Factory-generated records
 
 ---
 
-📋 Project Structure
+## 📁 Project Structure:
 
 Pixel_Positions/
 ├── app/
@@ -85,66 +84,56 @@ Pixel_Positions/
 
 ---
 
-⚙️ Installation:
+##⚙️ Installation & Setup:
 
-# Clone the project
+
+### Clone the repository
 git clone <repo-url>
 cd Pixel_Positions
 
-# Install dependencies
+### Install backend dependencies
 composer install
+
+### Install frontend dependencies
 npm install
 
-# Configure environment
+### Setup environment
 cp .env.example .env
 php artisan key:generate
 
-# Set database + Mailtrap credentials in .env:
-# MAIL_FROM_ADDRESS=example@example.com
+### Configure database & mail credentials in .env
+### MAIL_FROM_ADDRESS=example@example.com
 
-# Run migrations and seed
+### Run migrations & seeders
 php artisan migrate --seed
 
-# Link public storage
+### Link storage for logos
 php artisan storage:link
 
-# Start frontend build and dev server
-npm run dev
-
-# Start backend server & queue worker
-php artisan serve
-php artisan queue:work
+### Start development servers
+npm run dev     
+php artisan serve 
+php artisan queue:work 
 
 ---
 
-📧 Email Configuration
-Ensure these variables are in .env:
+## 📧 Email Configuration
+Ensure the following in your .env:
 
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525  # or 587
-MAIL_USERNAME=<your_username>
-MAIL_PASSWORD=<your_password>
-MAIL_FROM_ADDRESS=example@example.com
+MAIL_PORT=2525
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_FROM_ADDRESS=you@example.com
 MAIL_FROM_NAME="Pixel Positions"
 
 ---
 
-👨‍💻 About the Developer
-This project was developed by Mohamed Elabyad as his first Laravel application, showcasing:
+## 👨‍💻 Author:
+Mohamed Elabyad
+Laravel & PHP Web Developer
+📩 Email: m.elabyad.work@gmail.com (mailto:m.elabyad.work@gmail.com)
 
-Laravel fundamentals (DB, queues, email, auth)
-
-Tailwind CSS v4 and Vite integration
-
-Code structure & clean UI
-
----
-
-📩 Contact: m.elabyad.work@gmail.com
-
----
-
-📜 License
+## 📜 License:
 Released under the MIT License.
-
