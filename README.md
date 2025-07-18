@@ -133,7 +133,7 @@ MAIL_FROM_NAME="Pixel Positions"
 ## 👨‍💻 Author:
 Mohamed Elabyad
 Laravel & PHP Web Developer
-📩 Email: m.elabyad.work@gmail.com (mailto:m.elabyad.work@gmail.com)
+📩 Email: m.elabyad.work@gmail.com 
 
 ## 📜 License:
 Released under the MIT License.
