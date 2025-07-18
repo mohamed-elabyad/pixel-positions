@@ -102,7 +102,7 @@ cp .env.example .env
 php artisan key:generate
 
 ### Configure database & mail credentials in .env
-### MAIL_FROM_ADDRESS=example@example.com
+### MAIL_FROM_ADDRESS=you@example.com
 
 ### Run migrations & seeders
 php artisan migrate --seed
